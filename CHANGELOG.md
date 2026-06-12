@@ -4,6 +4,8 @@ All notable changes to the Growth Scout skill package are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versioning policy is described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag `v0.1.0` points to commit `96d4bc5` (MIT-licensed open-source release; core skill package landed in `704752f` via #1).
+
 ## [0.2.0] - 2026-06-12
 
 ### Added
@@ -25,8 +27,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 ### Follow-up (not in this release)
 
-- GitHub release tags aligned with `VERSION`
 - Optional MCP competitor fetch
 - Industry reference packs
 
+## [0.1.0] - 2026-06-11
+
+### Added
+
+- **Canonical workflow** — `SKILL.md` with five-phase growth scouting (product scan → opportunity report → PRD).
+- **References** — codebase mapping, competitor analysis, growth taxonomy, market signals, opportunity scoring (GOS), validation experiments.
+- **Templates** — product map, opportunity report, growth PRD, competitor matrix, evidence ledger, GitHub issues.
+- **Examples** — fictional Chartflow product scan, opportunity report, and growth PRD.
+- **Integrations** — per-agent setup notes for Cursor, Claude Code, Codex, GitHub Copilot, OpenCode, and Aider.
+- **MIT license** and open-source README (#2).
+
 [0.2.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/008993368-yaz/Growth-Scout/releases/tag/v0.1.0

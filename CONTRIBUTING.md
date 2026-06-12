@@ -50,10 +50,13 @@ CI runs the same check on every push and pull request (see `.github/workflows/va
 When you ship a user-facing bundle:
 
 1. Bump `VERSION`.
-2. Add a dated section to `CHANGELOG.md`.
+2. Add a dated section to `CHANGELOG.md` (include compare links at the bottom).
 3. Recommend product repos copy the new `VERSION` file alongside `SKILL.md` so teams know which revision they pinned.
+4. Create an **annotated git tag** matching `VERSION` (e.g. `v0.2.0`) on the release commit.
+5. Push the tag and publish a **GitHub release** with notes from the `CHANGELOG.md` section (`gh release create`).
+6. Run `node scripts/validate-links.mjs` before tagging so compare/release links resolve.
 
-GitHub release tags are optional follow-up; the file-based version is the source of truth for adopters.
+The `VERSION` file is the source of truth for adopters copying the skill; git tags and GitHub releases mirror it for changelog navigation and pinning.
 
 ## Proposing rubric or template changes
 
