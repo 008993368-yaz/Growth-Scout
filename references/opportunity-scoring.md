@@ -22,7 +22,7 @@ Growth Opportunity Score (GOS) =
 
 Each factor: **1–5** (integers unless noted).
 
-**Theoretical range:** 7 (all 1s, max penalties) to 35 (all 5s, no penalties).  
+**Theoretical range:** -8 (all positive factors 1, all penalties 5) to 32 (all positive factors 5, all penalties 1).  
 **Practical range:** Most serious opportunities land between 18 and 28.
 
 ---
