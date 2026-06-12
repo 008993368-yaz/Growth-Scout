@@ -175,7 +175,7 @@ Aim for 8–15 raw ideas before scoring. Merge duplicates.
 
 ### Phase 5: Score opportunities
 
-Use the Growth Opportunity Score model. Full rubric: `references/opportunity-scoring.md`.
+Use the Growth Opportunity Score model. Full rubric: `references/opportunity-scoring.md`. Recommendation bands (Build now, Validate first, Park, Ignore): see the **Recommendation thresholds** table in that file.
 
 ```
 Growth Opportunity Score =
@@ -237,6 +237,19 @@ Output **3–7 ranked opportunities**. For each include:
 6. Validation plan for anything not "Build now"
 
 Template: `templates/opportunity-report-template.md`.
+
+### Large repository mode
+
+Use this **multi-turn** sequence when the codebase is too large to read in one pass (monorepos, >~50k LOC, or context limits). Do not attempt all phases in a single turn.
+
+| Turn | Scope | Output |
+|------|-------|--------|
+| **1** | Phases 1–2 only | Product Scan + capability map (`templates/product-map-template.md`). No scoring yet. |
+| **2** | Phase 3 + Phase 4 (light) | External signals summary + opportunity **longlist** (8–15 titles with one-line problem statements). No full GOS tables. |
+| **3** | Phase 5–6 (top 5) | Full GOS scoring and ranking for **top 5** longlist items only. |
+| **4** | Phase 7 on demand | Deep dive on **#1** only; PRD / GitHub issues **only if the user requests**. |
+
+Between turns, carry forward the product map and longlist as context. Flag **unknown** where the repo was not re-read. Recommend running `node scripts/repo-inventory.mjs` on the product repo when Phase 1 needs a fast skeleton (tooling ships with the Growth Scout package).
 
 ### Phase 7: Turn selected opportunity into execution artifacts
 

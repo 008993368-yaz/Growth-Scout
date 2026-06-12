@@ -44,5 +44,6 @@ Then prompt:
 | [github-copilot.md](github-copilot.md) | Copilot workspace instructions |
 | [opencode.md](opencode.md) | OpenCode project config |
 | [aider.md](aider.md) | Aider read files / config |
+| [VERIFICATION.md](VERIFICATION.md) | Copy-paste test prompts per agent |
 
 None of these are required. **`SKILL.md` alone is sufficient** if your agent can read it when asked.
