@@ -1,6 +1,10 @@
 # Growth Scout
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 **Scout opportunities before you write code.**
+
+Open-source, agent-agnostic skill package for product growth scouting. Use it in your own repos — copy, fork, or clone.
 
 Growth Scout is a **portable, agent-agnostic skill** (markdown, not an app) that helps coding agents recommend **what feature to build next** with the highest chance of helping a product grow.
 
@@ -58,3 +62,7 @@ Do not invent market demand. Cap scores when evidence is weak. Use [`references/
 CLI repo inventory, optional MCP for competitor fetch, industry reference packs.
 
 **Tagline:** Scout opportunities before you write code.
+
+## License
+
+[MIT](LICENSE) — use, modify, and distribute freely with attribution.

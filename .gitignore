@@ -1,0 +1,14 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.idea/
+*.swp
+*.swo
+*~
+
+# Local overrides (keep skill package portable)
+.env
+.env.*
