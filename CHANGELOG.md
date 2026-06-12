@@ -6,6 +6,19 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag `v0.1.0` points to commit `96d4bc5` (MIT-licensed open-source release; core skill package landed in `704752f` via #1).
 
+## [0.3.0] - 2026-06-12
+
+### Added
+
+- **Industry reference packs** in `references/industry-packs/` — starter vertical heuristics for B2B SaaS, developer tools, and consumer mobile (table-stakes, signal sources, competitor buckets, evidence labeling).
+- **SKILL.md** — Quick reference row for industry packs; Phase 3 pointer when the user names a vertical.
+- **Link validation** — `scripts/validate-links.mjs` scans `references/industry-packs/*.md`.
+
+### Changed
+
+- README roadmap: industry reference packs marked shipped.
+- `references/growth-taxonomy.md` cross-links to industry packs.
+
 ## [0.2.0] - 2026-06-12
 
 ### Added
@@ -28,7 +41,6 @@ Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag 
 ### Follow-up (not in this release)
 
 - Optional MCP competitor fetch
-- Industry reference packs
 
 ## [0.1.0] - 2026-06-11
 
@@ -41,5 +53,6 @@ Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag 
 - **Integrations** — per-agent setup notes for Cursor, Claude Code, Codex, GitHub Copilot, OpenCode, and Aider.
 - **MIT license** and open-source README (#2).
 
+[0.3.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/008993368-yaz/Growth-Scout/releases/tag/v0.1.0

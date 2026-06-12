@@ -136,6 +136,8 @@ Note what the codebase already makes cheap to build.
 
 Research when tools allow. Sources and strength ratings: `references/market-signal-sources.md`.
 
+If the user names a vertical, consult `references/industry-packs/<vertical>.md` (e.g. `b2b-saas`, `developer-tools`, `consumer-mobile`).
+
 **If live browsing is unavailable:** use only repo context and user-provided links/docs. Mark all external claims as **inferred** or **unknown**. Recommend validation before building.
 
 **Never invent competitor evidence.**
@@ -277,6 +279,7 @@ Example PRD: `examples/example-growth-prd.md`.
 | Scoring rubric | `references/opportunity-scoring.md` |
 | Competitor method | `references/competitor-analysis.md` |
 | Signal sources | `references/market-signal-sources.md` |
+| Industry packs | `references/industry-packs/` (`b2b-saas`, `developer-tools`, `consumer-mobile`) |
 | Codebase mapping | `references/codebase-product-mapping.md` |
 | Validation options | `references/validation-experiments.md` |
 | Product scan example | `examples/example-product-scan.md` |

@@ -36,7 +36,7 @@ Use one **primary** lever per opportunity. Add secondary levers only when they m
 
 | Feature | Why it helps |
 |---------|--------------|
-| Industry-specific starter templates | Skips blank-slate problem |
+| Industry-specific starter templates | Skips blank-slate problem — `references/industry-packs/` (`b2b-saas`, `developer-tools`, `consumer-mobile`) |
 | Interactive product tour | Guides first workflow |
 | Sample data / demo project | Shows value before setup |
 | Progress checklist | Makes next step obvious |
