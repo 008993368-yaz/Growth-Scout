@@ -1,12 +1,12 @@
 ---
 name: growth-scout
 description: >-
-  Recommends what feature a product should build next by combining codebase
-  analysis, product context, competitor gaps, market signals, growth scoring,
-  and implementation feasibility. Use when the user asks what to build next,
-  wants growth opportunities, competitor gap analysis, a growth roadmap,
-  market scouting, feature prioritization, or turning an opportunity into a
-  PRD or GitHub issues.
+  Agent-agnostic skill that recommends what feature a product should build
+  next by combining codebase analysis, product context, competitor gaps,
+  market signals, growth scoring, and implementation feasibility. Use when the
+  user asks what to build next, wants growth opportunities, competitor gap
+  analysis, a growth roadmap, market scouting, feature prioritization, or
+  turning an opportunity into a PRD or GitHub issues. Works in any coding agent.
 ---
 
 # Growth Scout
@@ -14,6 +14,19 @@ description: >-
 **Tagline:** Scout opportunities before you write code.
 
 Growth Scout is the AI growth strategist that lives inside your codebase and tells your coding agent what to build next.
+
+## Agent-agnostic skill
+
+This file is the **canonical** instruction set. It does not depend on Cursor, Claude, Copilot, or any specific tool.
+
+| Entry | Purpose |
+|-------|---------|
+| [SKILL.md](SKILL.md) | Full workflow (this file) |
+| [AGENTS.md](AGENTS.md) | Short entry for agents that auto-read project instructions |
+| [integrations/README.md](integrations/README.md) | Optional setup for Cursor, Claude Code, Codex, Copilot, OpenCode, Aider |
+
+**Minimum usage:** copy SKILL.md plus supporting folders into a product repo and ask the agent to follow it.
+
 
 ## When to activate
 
