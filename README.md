@@ -50,7 +50,7 @@ For Claude Code, Codex, GitHub Copilot, OpenCode, Aider, and other setups, see [
 
 ## Quick start (any agent)
 
-1. Copy `SKILL.md`, `references/`, `templates/`, and `examples/` into your product project (or clone this repo).
+1. Copy `SKILL.md`, `references/`, `templates/`, `examples/`, and `VERSION` into your product project (or clone this repo).
 2. Prompt: **Follow Growth Scout (`SKILL.md`) and recommend what to build next.**
 3. Optional per-agent wiring: [`integrations/README.md`](integrations/README.md).
 
@@ -58,6 +58,14 @@ For Claude Code, Codex, GitHub Copilot, OpenCode, Aider, and other setups, see [
 |-------------|---------|
 | [`SKILL.md`](SKILL.md) | Canonical workflow (start here) |
 | [`AGENTS.md`](AGENTS.md) | Auto-discovery for Codex, Claude Code, and similar tools |
+
+### Example outputs (fictional Chartflow narrative)
+
+| Artifact | File |
+|----------|------|
+| Product Scan | [`examples/example-product-scan.md`](examples/example-product-scan.md) |
+| Opportunity Report | [`examples/example-opportunity-report.md`](examples/example-opportunity-report.md) |
+| Growth PRD | [`examples/example-growth-prd.md`](examples/example-growth-prd.md) |
 
 ## What it combines
 
@@ -83,6 +91,26 @@ examples/
 .cursor/rules/    # Optional Cursor-only hook
 ```
 
+## Tooling
+
+Zero-dependency Node scripts (no `npm install` required):
+
+```bash
+# Pre-fill a product-map draft from a target repo (stdout or file)
+node scripts/repo-inventory.mjs .
+node scripts/repo-inventory.mjs /path/to/product --out product-map-draft.md
+node scripts/repo-inventory.mjs --help
+
+# Validate markdown links in core docs (also runs in CI)
+node scripts/validate-links.mjs
+```
+
+Auto-detected inventory fields are labeled **inferred**; unknowns stay blank for the agent or user to fill.
+
+## Versioning
+
+The [`VERSION`](VERSION) file tracks the skill package revision (currently **0.2.0**). Copy it into product repos alongside `SKILL.md` so teams know which Growth Scout revision they pinned. See [`CHANGELOG.md`](CHANGELOG.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 ## vs generic PM skills
 
 Codebase-aware scoring, evidence labels (known/inferred/unknown), competitor gap buckets, and explicit research limits when browsing is unavailable.
@@ -93,7 +121,7 @@ Do not invent market demand. Cap scores when evidence is weak. Use [`references/
 
 ## Roadmap
 
-CLI repo inventory, optional MCP for competitor fetch, industry reference packs.
+Optional MCP for competitor fetch, industry reference packs, GitHub release tags aligned with `VERSION`.
 
 **Tagline:** Scout opportunities before you write code.
 

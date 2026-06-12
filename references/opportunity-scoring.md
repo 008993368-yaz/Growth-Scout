@@ -121,6 +121,33 @@ GOS = 4+3+5+4+4+4+4 - 2 - 2 - 2 = 26
 
 ---
 
+## Example calculation (Validate first)
+
+**Feature:** CSV export scheduling for dashboard snapshots  
+**Product:** Fictional analytics SaaS "Chartflow" (solo founders on free tier; expansion lever untested)
+
+| Factor | Score | Notes |
+|--------|-------|-------|
+| Demand Strength | 2 | 3 forum threads + 1 churn exit survey mention (**inferred**); no ticket volume (**unknown**) |
+| Competitor Gap | 3 | 1/3 competitors highlight scheduled exports; not table-stakes (**inferred** from marketing pages) |
+| Strategic Fit | 3 | Fits reporting workflow but not core collaborative differentiator (**inferred**) |
+| Growth Leverage | 3 | Expansion / activation for power users (**inferred**) |
+| Revenue/Retention Impact | 3 | Might lift free→paid; no pricing experiment yet (**unknown**) |
+| Codebase Feasibility | 4 | Export job queue + email infra exist (**known** from repo map) |
+| Time-to-Learn Advantage | 4 | Concierge MVP: manual CSV drop for 5 design partners (**inferred**) |
+| Implementation Complexity | 3 | Scheduler UI + job retries across workspaces (**inferred**) |
+| Product Risk | 3 | Scope creep into full BI scheduling (**inferred**) |
+| Maintenance Burden | 3 | Support for failed jobs and timezone edge cases (**inferred**) |
+
+```
+GOS = 2+3+3+3+3+4+4 - 3 - 3 - 3 = 19
+```
+
+**Recommendation:** **Validate first** — run a fake-door on the export screen and 5 concierge manual runs before building the scheduler UI.  
+**Success metric:** ≥15% click-through on fake-door among weekly active exporters; ≥2/5 concierge users request automation within 14 days.
+
+---
+
 ## Reporting format
 
 Include a score table for top opportunities:
