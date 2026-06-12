@@ -1,0 +1,49 @@
+---
+description: >-
+  Activate Growth Scout when the user asks what to build next, wants growth
+  opportunities, competitor gaps, roadmaps, or PRDs grounded in codebase and
+  evidence.
+alwaysApply: false
+---
+
+# Growth Scout
+
+**Tagline:** Scout opportunities before you write code.
+
+When the user asks about product growth, next features, competitor gaps, or prioritization, read and follow `SKILL.md` in this repository (or the installed Growth Scout skill path).
+
+## Activation examples
+
+- "What should we build next?"
+- "Find growth opportunities in this repo"
+- "Compare us to [competitor] and suggest gaps"
+- "Turn the top opportunity into a PRD and GitHub issues"
+
+## Workflow summary
+
+1. **Understand product** — README, routes, schema, tests, billing, analytics
+2. **Map capabilities** — shipped, partial, missing table-stakes
+3. **Scout signals** — only with evidence; mark limits if no browsing
+4. **Identify opportunities** — classify by growth lever (see `references/growth-taxonomy.md`)
+5. **Score** — Growth Opportunity Score in `references/opportunity-scoring.md`
+6. **Recommend** — 3–7 ranked items with success metrics and "why not build"
+7. **Execute** — PRD, issues, validation plan on request (see `templates/`)
+
+## Output expectations
+
+| Request | Deliverable |
+|---------|-------------|
+| First scan | Product Scan (`templates/product-map-template.md`) |
+| Competitors named | Competitor Gap Report |
+| What to build | Growth Opportunity Report with scores |
+| Ship it | Growth PRD + optional GitHub breakdown |
+
+Always label claims: **known**, **inferred**, **unknown**.
+
+## Evidence-first rules
+
+- Do not invent market data, review quotes, or competitor features
+- Cap demand scores when evidence is weak; recommend validation
+- Prefer MVP scope that fits existing architecture
+- Include success metric and validation for every top recommendation
+- State explicitly when external research is limited
