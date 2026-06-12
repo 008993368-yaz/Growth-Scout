@@ -14,6 +14,40 @@ Works with **Cursor, Claude Code, Codex, GitHub Copilot, OpenCode, Aider**, and 
 
 > What should we build next that has the highest chance of helping this product grow?
 
+## Install
+
+Growth Scout is a Markdown skill package, so there is no package manager install step. Add the files to the product repo you want an agent to analyze.
+
+### Option A: Copy into a product repo
+
+```bash
+git clone https://github.com/008993368-yaz/Growth-Scout.git
+cd your-product-repo
+cp /path/to/Growth-Scout/SKILL.md .
+cp /path/to/Growth-Scout/AGENTS.md .
+cp -R /path/to/Growth-Scout/references .
+cp -R /path/to/Growth-Scout/templates .
+cp -R /path/to/Growth-Scout/examples .
+```
+
+Then prompt your agent: **Follow Growth Scout (`SKILL.md`) and recommend what to build next.**
+
+### Option B: Cursor project skill
+
+Copy the package into a Cursor skill folder in your product repo:
+
+```text
+.cursor/skills/growth-scout/
+  SKILL.md
+  references/
+  templates/
+  examples/
+```
+
+Then prompt: **Use the growth-scout skill: what should we build next?**
+
+For Claude Code, Codex, GitHub Copilot, OpenCode, Aider, and other setups, see [`integrations/README.md`](integrations/README.md).
+
 ## Quick start (any agent)
 
 1. Copy `SKILL.md`, `references/`, `templates/`, and `examples/` into your product project (or clone this repo).
