@@ -16,6 +16,7 @@ const SCAN_PATTERNS = [
   "AGENTS.md",
   "README.md",
   "references/*.md",
+  "references/industry-packs/*.md",
   "templates/*.md",
   "integrations/*.md",
   "examples/*.md",

@@ -121,7 +121,7 @@ Do not invent market demand. Cap scores when evidence is weak. Use [`references/
 
 ## Roadmap
 
-Optional MCP for competitor fetch, industry reference packs, ~~GitHub release tags aligned with `VERSION`~~.
+Optional MCP for competitor fetch, ~~industry reference packs~~, ~~GitHub release tags aligned with `VERSION`~~.
 
 **Tagline:** Scout opportunities before you write code.
 
