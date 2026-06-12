@@ -4,7 +4,7 @@
 
 In VS Code or GitHub Copilot, add workspace instructions (.github/copilot-instructions.md or Copilot Settings > Instructions):
 
-`markdown
+```markdown
 # Growth Scout
 
 For product growth, feature prioritization, competitor gaps, or what to build next questions:
@@ -12,7 +12,7 @@ For product growth, feature prioritization, competitor gaps, or what to build ne
 2. Follow the seven-phase Growth Scout workflow
 3. Label evidence as known, inferred, or unknown
 4. Use templates/ for output structure
-`
+```
 
 ## Prompt example
 
