@@ -11,7 +11,7 @@ import { htmlToText, extractTitle } from "./extract.js";
 const TIMEOUT_MS = 10_000;
 const MAX_BYTES = 1_500_000;
 const USER_AGENT =
-  "GrowthScoutCompetitorMCP/0.4.0 (+https://github.com/008993368-yaz/Growth-Scout)";
+  "GrowthScoutMCP/0.6.0 (+https://github.com/008993368-yaz/Growth-Scout)";
 
 const BLOCKED_HOSTNAMES = new Set([
   "localhost",

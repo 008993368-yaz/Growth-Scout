@@ -9,6 +9,6 @@ async function main(): Promise<void> {
 }
 
 main().catch((err) => {
-  console.error("Fatal error in growth-scout-competitor MCP:", err);
+  console.error("Fatal error in growth-scout-mcp:", err);
   process.exit(1);
 });

@@ -1,11 +1,11 @@
 {
-  "name": "@growth-scout/competitor-mcp",
-  "version": "0.4.0",
-  "description": "Growth Scout MCP server — end-to-end competitor scout with draft matrix output",
+  "name": "@growth-scout/mcp",
+  "version": "0.6.0",
+  "description": "Growth Scout MCP server — competitor scouting and work-item demand signals",
   "type": "module",
   "main": "dist/index.js",
   "bin": {
-    "growth-scout-competitor-mcp": "dist/index.js"
+    "growth-scout-mcp": "dist/index.js"
   },
   "scripts": {
     "build": "tsc",

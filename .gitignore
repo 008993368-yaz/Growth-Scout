@@ -15,4 +15,4 @@ desktop.ini
 
 # Node (optional MCP sub-package)
 node_modules/
-mcp/growth-scout-competitor/dist/
+mcp/growth-scout-mcp/dist/
