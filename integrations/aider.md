@@ -24,3 +24,7 @@ Add more reference files as needed. Templates are loaded on demand when generati
 ## Tip
 
 For a full opportunity report, also `--read templates/opportunity-report-template.md`.
+
+## Optional MCP
+
+Aider does not connect MCP servers directly. Use Growth Scout without MCP, or run the scout in an MCP-capable agent and paste results. Server docs: [`integrations/mcp.md`](mcp.md).

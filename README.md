@@ -85,6 +85,7 @@ Turn the top opportunity into a PRD and GitHub issues.
 AGENTS.md
 SKILL.md
 integrations/     # Optional per-agent setup (Cursor is one option)
+mcp/              # Optional MCP competitor scout server
 references/
 templates/
 examples/
@@ -105,11 +106,17 @@ node scripts/repo-inventory.mjs --help
 node scripts/validate-links.mjs
 ```
 
+**Optional MCP competitor scout** (any MCP-capable agent): build and connect the stdio server per [`integrations/mcp.md`](integrations/mcp.md). Server package: [`mcp/growth-scout-competitor/`](mcp/growth-scout-competitor/).
+
+```bash
+cd mcp/growth-scout-competitor && npm install && npm test
+```
+
 Auto-detected inventory fields are labeled **inferred**; unknowns stay blank for the agent or user to fill.
 
 ## Versioning
 
-The [`VERSION`](VERSION) file tracks the skill package revision (currently **0.2.0**). Copy it into product repos alongside `SKILL.md` so teams know which Growth Scout revision they pinned. See [`CHANGELOG.md`](CHANGELOG.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
+The [`VERSION`](VERSION) file tracks the skill package revision (currently **0.4.0**). Copy it into product repos alongside `SKILL.md` so teams know which Growth Scout revision they pinned. See [`CHANGELOG.md`](CHANGELOG.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## vs generic PM skills
 
@@ -121,7 +128,7 @@ Do not invent market demand. Cap scores when evidence is weak. Use [`references/
 
 ## Roadmap
 
-Optional MCP for competitor fetch, ~~industry reference packs~~, ~~GitHub release tags aligned with `VERSION`~~.
+Optional ~~MCP for competitor fetch~~, ~~industry reference packs~~, ~~GitHub release tags aligned with `VERSION`~~.
 
 **Tagline:** Scout opportunities before you write code.
 

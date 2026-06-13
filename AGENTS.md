@@ -23,6 +23,8 @@ Activate when the user asks about:
 
 Per-agent install paths (Cursor rules, CLAUDE.md snippets, Copilot instructions, etc.): [`integrations/README.md`](integrations/README.md).
 
+Optional MCP competitor scout (any MCP-capable agent): [`integrations/mcp.md`](integrations/mcp.md).
+
 ## Examples
 
 See [`examples/`](examples/) for sample Product Scan, Opportunity Report, and Growth PRD outputs.

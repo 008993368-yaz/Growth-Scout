@@ -17,3 +17,7 @@ For product growth, feature prioritization, competitor gaps, or what to build ne
 ## Prompt example
 
 > Using Growth Scout (SKILL.md), rank the top 5 growth opportunities for this codebase.
+
+## Optional MCP
+
+If your Copilot environment supports MCP servers, connect the Growth Scout Competitor MCP per [`integrations/mcp.md`](mcp.md). Otherwise use SKILL.md with repo context and user-provided links — no MCP required.

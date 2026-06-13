@@ -20,6 +20,7 @@ const SCAN_PATTERNS = [
   "templates/*.md",
   "integrations/*.md",
   "examples/*.md",
+  "mcp/*.md",
 ];
 
 function expandScanFiles() {
@@ -49,6 +50,8 @@ function stripLinkTarget(raw) {
   if (quoted) target = quoted[1];
   const space = target.search(/\s/);
   if (space !== -1) target = target.slice(0, space);
+  const hash = target.indexOf("#");
+  if (hash !== -1) target = target.slice(0, hash);
   return target;
 }
 

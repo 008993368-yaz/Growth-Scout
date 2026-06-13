@@ -6,6 +6,25 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag `v0.1.0` points to commit `96d4bc5` (MIT-licensed open-source release; core skill package landed in `704752f` via #1).
 
+## [0.4.0] - 2026-06-12
+
+### Added
+
+- **MCP competitor scout** — optional `mcp/growth-scout-competitor/` package with stdio MCP server.
+  - `scout_competitors` — end-to-end scout: product category + competitor names → draft matrix markdown + evidence ledger rows.
+  - `fetch_page`, `competitor_snapshot`, `search_competitor_pages` — low-level tools for debug and partial reruns.
+  - Brave Search (default) and Serper search providers; graceful fallback when API key missing.
+- **`mcp/README.md`** — server install, tools, env vars, safety limits (agent-neutral).
+- **`integrations/mcp.md`** — connect from any MCP client (Cursor, Claude Desktop, Claude Code, etc.); usage rules for agents.
+- **SKILL.md** — quick reference row for optional MCP scout (`integrations/mcp.md`); no agent-specific MCP instructions in canonical workflow.
+- **Integrations** — per-agent pointers in `integrations/cursor.md`, `integrations/claude-code.md`; matrix row in `integrations/README.md`; verification in `integrations/VERIFICATION.md`.
+- **CI** — `validate-mcp` job runs MCP package tests and build on push/PR.
+
+### Changed
+
+- README roadmap: MCP competitor fetch marked shipped; Tooling section documents optional MCP.
+- `scripts/validate-links.mjs` scans `mcp/*.md`.
+
 ## [0.3.0] - 2026-06-12
 
 ### Added
@@ -53,6 +72,7 @@ Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag 
 - **Integrations** — per-agent setup notes for Cursor, Claude Code, Codex, GitHub Copilot, OpenCode, and Aider.
 - **MIT license** and open-source README (#2).
 
+[0.4.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/008993368-yaz/Growth-Scout/releases/tag/v0.1.0

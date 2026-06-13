@@ -91,3 +91,25 @@ node scripts/repo-inventory.mjs .
 ```
 
 **Expected:** Link check passes; stdout contains a product map draft with **inferred** labels for detected folders (`templates/`, `references/`, etc.).
+
+---
+
+## MCP competitor scout (any MCP client)
+
+**Setup:** Build and configure the stdio server per [`integrations/mcp.md`](mcp.md).
+
+**Prompt:**
+
+```
+Follow Growth Scout (SKILL.md). With Growth Scout Competitor MCP connected,
+run scout_competitors for category "collaborative analytics" with competitors:
+[Comp A, Comp B, Comp C]. Review the draft matrix, classify gaps, and add evidence ledger rows.
+Do not score GOS until gaps are classified.
+```
+
+**Expected artifacts:**
+
+- Draft competitor matrix markdown (not a final opportunity report)
+- Evidence rows with **known** / **inferred** / **unknown** confidence
+- Classified gaps section left for agent completion
+- Explicit research limits when fetch or search fails
