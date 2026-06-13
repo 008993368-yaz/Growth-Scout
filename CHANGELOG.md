@@ -6,6 +6,13 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag `v0.1.0` points to commit `96d4bc5` (MIT-licensed open-source release; core skill package landed in `704752f` via #1).
 
+## [Unreleased]
+
+### Added
+
+- **`scripts/install-growth-scout.mjs`** — bootstrap install: copy skill files into a product repo (`--layout root` or `cursor`), run repo inventory, write `.growth-scout/product-map-draft.md`, and print a first agent prompt.
+- **`repo-inventory.mjs`** — exports `generateProductMap` for reuse by the install script (CLI behavior unchanged).
+
 ## [0.4.0] - 2026-06-12
 
 ### Added

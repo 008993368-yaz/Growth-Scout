@@ -10,11 +10,13 @@ Growth Scout is an agent-agnostic markdown skill package. Contributions should k
    node scripts/validate-links.mjs
    ```
 
-2. If you changed `repo-inventory.mjs`, smoke-test on this repo and a small app repo:
+2. If you changed `repo-inventory.mjs` or `install-growth-scout.mjs`, smoke-test on this repo and a small app repo:
 
    ```bash
    node scripts/repo-inventory.mjs .
    node scripts/repo-inventory.mjs --help
+   node scripts/install-growth-scout.mjs --help
+   node scripts/install-growth-scout.mjs --dry-run .
    ```
 
 3. Label claims in examples and rubrics as **known**, **inferred**, or **unknown** — fictional narratives (e.g. Chartflow) stay fictional.
