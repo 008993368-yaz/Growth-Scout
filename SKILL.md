@@ -142,6 +142,17 @@ If the user names a vertical, consult `references/industry-packs/<vertical>.md` 
 
 **Never invent competitor evidence.**
 
+**Work-item demand signals (MCP, ask-first):** When MCP is connected and the user wants issue-tracker demand evidence:
+
+1. Call `preview_work_item_mine` first — show scope summary to the user (metadata/count only).
+2. Wait for explicit approval ("Yes, proceed"), a file path (`.growth-scout/work-items.json`), or skip.
+3. Only then call `mine_work_item_signals` with `preview_id` + `confirmed: true`.
+4. Never auto-detect provider from git remote without user confirmation.
+5. If user declines → use manual evidence only; cap **Demand Strength** per rubric.
+6. Never mine during bootstrap install (`install-growth-scout.mjs`).
+
+See [`integrations/mcp.md`](integrations/mcp.md) for the full ask-first flow.
+
 For competitor research, organize findings into:
 
 | Bucket | Meaning |
@@ -282,7 +293,7 @@ Example PRD: `examples/example-growth-prd.md`.
 | Industry packs | `references/industry-packs/` (`b2b-saas`, `developer-tools`, `consumer-mobile`) |
 | Codebase mapping | `references/codebase-product-mapping.md` |
 | Validation options | `references/validation-experiments.md` |
-| Optional MCP scout | `integrations/mcp.md` (any MCP-capable agent) |
+| Optional MCP scout | `integrations/mcp.md` — competitor + work-item tools (`mcp/growth-scout-mcp/`) |
 | Product scan example | `examples/example-product-scan.md` |
 | Opportunity report example | `examples/example-opportunity-report.md` |
 

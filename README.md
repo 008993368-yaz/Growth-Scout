@@ -96,7 +96,7 @@ Turn the top opportunity into a PRD and GitHub issues.
 AGENTS.md
 SKILL.md
 integrations/     # Optional per-agent setup (Cursor is one option)
-mcp/              # Optional MCP competitor scout server
+mcp/              # Optional MCP server (competitor + work-item signals)
 references/
 templates/
 examples/
@@ -122,10 +122,10 @@ node scripts/repo-inventory.mjs --help
 node scripts/validate-links.mjs
 ```
 
-**Optional MCP competitor scout** (any MCP-capable agent): build and connect the stdio server per [`integrations/mcp.md`](integrations/mcp.md). Server package: [`mcp/growth-scout-competitor/`](mcp/growth-scout-competitor/).
+**Optional Growth Scout MCP** (any MCP-capable agent): build and connect the stdio server per [`integrations/mcp.md`](integrations/mcp.md). Server package: [`mcp/growth-scout-mcp/`](mcp/growth-scout-mcp/).
 
 ```bash
-cd mcp/growth-scout-competitor && npm install && npm test
+cd mcp/growth-scout-mcp && npm install && npm test
 ```
 
 Auto-detected inventory fields are labeled **inferred**; unknowns stay blank for the agent or user to fill.

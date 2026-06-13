@@ -25,7 +25,7 @@ Then prompt:
 | Agent | Recommended setup | Auto-load? |
 |-------|-------------------|------------|
 | **Any agent** | Point at `SKILL.md` in prompt | Manual |
-| **Any MCP client** | Optional competitor scout server; see [mcp.md](mcp.md) | Manual MCP config |
+| **Any MCP client** | Optional Growth Scout MCP (competitor + work-item signals); see [mcp.md](mcp.md) | Manual MCP config |
 | **Cursor** | Copy to `.cursor/skills/growth-scout/` or reference from project root | Skill + optional rule |
 | **Claude Code** | Add `AGENTS.md` or `@SKILL.md` in project; see [claude-code.md](claude-code.md) | Often reads AGENTS.md |
 | **OpenAI Codex** | Add `AGENTS.md` to repo root; see [codex.md](codex.md) | Reads AGENTS.md in CLI |
@@ -40,7 +40,7 @@ Then prompt:
 | File | Purpose |
 |------|---------|
 | [cursor.md](cursor.md) | Cursor skills + optional rule |
-| [mcp.md](mcp.md) | MCP competitor scout (any MCP-capable agent) |
+| [mcp.md](mcp.md) | Growth Scout MCP — competitor + work-item tools (any MCP-capable agent) |
 | [claude-code.md](claude-code.md) | CLAUDE.md / slash commands |
 | [codex.md](codex.md) | Codex CLI + AGENTS.md |
 | [github-copilot.md](github-copilot.md) | Copilot workspace instructions |
@@ -48,6 +48,6 @@ Then prompt:
 | [aider.md](aider.md) | Aider read files / config |
 | [VERIFICATION.md](VERIFICATION.md) | Copy-paste test prompts per agent |
 
-Optional MCP competitor scout (any MCP client): [mcp.md](mcp.md). Server details: [`mcp/README.md`](../mcp/README.md).
+Optional Growth Scout MCP (any MCP client): [mcp.md](mcp.md). Server details: [`mcp/README.md`](../mcp/README.md).
 
 None of these are required. **`SKILL.md` alone is sufficient** if your agent can read it when asked.

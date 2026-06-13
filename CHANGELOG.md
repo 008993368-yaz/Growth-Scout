@@ -6,6 +6,29 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag `v0.1.0` points to commit `96d4bc5` (MIT-licensed open-source release; core skill package landed in `704752f` via #1).
 
+## [0.6.0] - 2026-06-13
+
+### Added
+
+- **Work-item demand signal MCP tools** — SCM/issue-tracker agnostic, ask-first by design.
+  - `preview_work_item_mine` — show scope summary and estimated item count; no issue bodies in preview.
+  - `mine_work_item_signals` — fetch normalized demand signals after user approval (`confirmed: true` + valid `preview_id`).
+  - GitHub and file providers (v1); GitLab and Linear stubs return `not_implemented`.
+  - Normalized `WorkItemSignal` schema, theme clustering, evidence ledger markdown output.
+  - `templates/work-items-export-template.json` for file provider.
+- **`SKILL.md`** — Phase 3 ask-first rules for work-item mining; never auto-detect provider or mine on bootstrap install.
+
+### Changed
+
+- **Breaking:** Renamed MCP package `mcp/growth-scout-competitor/` → `mcp/growth-scout-mcp/`.
+  - Package name: `@growth-scout/mcp` (was `@growth-scout/competitor-mcp`).
+  - Bin: `growth-scout-mcp` (was `growth-scout-competitor-mcp`).
+  - MCP server key: `growth-scout-mcp` (was `growth-scout-competitor`).
+  - Update MCP config paths to `mcp/growth-scout-mcp/dist/index.js`.
+- **`integrations/mcp.md`** — unified server docs, work-item ask-first flow, `GITHUB_TOKEN` env.
+- **`mcp/README.md`** — competitor + work-item tools, token scopes, safety limits.
+- **`references/industry-packs/developer-tools.md`** — issue tracker signals described as SCM-agnostic.
+
 ## [0.5.0] - 2026-06-13
 
 ### Added

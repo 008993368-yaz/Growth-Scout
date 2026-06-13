@@ -113,14 +113,14 @@ On Windows, use `$env:TEMP\\gs-test-app` instead of `/tmp/gs-test-app`.
 
 ---
 
-## MCP competitor scout (any MCP client)
+## MCP Growth Scout (any MCP client)
 
 **Setup:** Build and configure the stdio server per [`integrations/mcp.md`](mcp.md).
 
-**Prompt:**
+**Competitor scout prompt:**
 
 ```
-Follow Growth Scout (SKILL.md). With Growth Scout Competitor MCP connected,
+Follow Growth Scout (SKILL.md). With Growth Scout MCP connected,
 run scout_competitors for category "collaborative analytics" with competitors:
 [Comp A, Comp B, Comp C]. Review the draft matrix, classify gaps, and add evidence ledger rows.
 Do not score GOS until gaps are classified.
@@ -132,3 +132,24 @@ Do not score GOS until gaps are classified.
 - Evidence rows with **known** / **inferred** / **unknown** confidence
 - Classified gaps section left for agent completion
 - Explicit research limits when fetch or search fails
+
+**Work-item signal prompt (ask-first):**
+
+```
+Follow Growth Scout (SKILL.md). With Growth Scout MCP connected,
+run preview_work_item_mine for provider file with file_path .growth-scout/work-items.json.
+Show me the scope summary and wait for my approval before mining.
+```
+
+After user approves:
+
+```
+Run mine_work_item_signals with the preview_id and confirmed: true.
+Classify theme clusters before scoring Demand Strength.
+```
+
+**Expected artifacts:**
+
+- Preview output with `preview_id`, scope summary, estimated item count (no issue bodies)
+- After confirmation: normalized signals JSON, theme clusters, evidence ledger markdown
+- Rejection if `confirmed` is not `true` or preview expired

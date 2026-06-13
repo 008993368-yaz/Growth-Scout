@@ -1,8 +1,8 @@
 # MCP integration (optional, any agent)
 
-Growth Scout includes an **optional** MCP server for Phase 3 competitor scouting. It works with **any agent or IDE that supports the [Model Context Protocol](https://modelcontextprotocol.io)** over stdio — Cursor, Claude Desktop, Claude Code, Windsurf, Zed, and others.
+Growth Scout includes an **optional** MCP server for Phase 3 scouting: **competitor research** and **work-item demand signals**. It works with **any agent or IDE that supports the [Model Context Protocol](https://modelcontextprotocol.io)** over stdio — Cursor, Claude Desktop, Claude Code, Windsurf, Zed, and others.
 
-The skill itself remains agent-agnostic: **`SKILL.md` works without MCP.** MCP only adds automated page fetch and draft matrix output when you connect the server.
+The skill itself remains agent-agnostic: **`SKILL.md` works without MCP.** MCP adds automated page fetch, draft matrix output, and consent-gated issue mining when you connect the server.
 
 Server reference (tools, env vars, safety): [`mcp/README.md`](../mcp/README.md).
 
@@ -11,7 +11,7 @@ Server reference (tools, env vars, safety): [`mcp/README.md`](../mcp/README.md).
 ## Build once (all agents)
 
 ```bash
-cd path/to/Growth-Scout/mcp/growth-scout-competitor
+cd path/to/Growth-Scout/mcp/growth-scout-mcp
 npm install
 npm run build
 npm test
@@ -20,22 +20,26 @@ npm test
 **Server entry (stdio):**
 
 ```text
-node /absolute/path/to/Growth-Scout/mcp/growth-scout-competitor/dist/index.js
+node /absolute/path/to/Growth-Scout/mcp/growth-scout-mcp/dist/index.js
 ```
 
-**Optional env** (required for full auto-scout without explicit URLs):
+**Optional env:**
 
 | Variable | Purpose |
 |----------|---------|
-| `BRAVE_SEARCH_API_KEY` | Brave Search API (default provider) |
+| `BRAVE_SEARCH_API_KEY` | Brave Search API (default search provider) |
 | `SERPER_API_KEY` | Serper alternative |
 | `GROWTH_SCOUT_SEARCH_PROVIDER` | `brave` (default) or `serper` |
+| `GITHUB_TOKEN` | Read-only token for GitHub Issues (work-item provider) |
+| `GROWTH_SCOUT_PRODUCT_ROOT` | Product repo root for file provider path validation |
 
 ---
 
 ## Usage rules (all agents)
 
-When the Growth Scout Competitor MCP is connected:
+When the Growth Scout MCP is connected:
+
+### Competitor scouting
 
 1. Call **`scout_competitors`** with user-approved competitor names (3–6) and `product_category`.
 2. Treat output as a **draft** — review URL resolution before scoring.
@@ -44,6 +48,31 @@ When the Growth Scout Competitor MCP is connected:
 5. Never promote search snippets to **known** without a successful `fetch_page`.
 6. Cap **Demand Strength** when matrix cells are Unknown or confidence is inferred-only.
 7. MCP does **not** replace GOS scoring or validation experiments.
+
+### Work-item demand signals (ask-first)
+
+**Never mine without explicit user approval.** Enforced by preview + `confirmed: true`, not docs alone.
+
+1. Call **`preview_work_item_mine`** — show scope summary to the user (metadata/count only, no issue bodies).
+2. Wait for user response: **"Yes, proceed"**, a file path, or **skip**.
+3. If approved, call **`mine_work_item_signals`** with `preview_id` + `confirmed: true`.
+4. Treat output as **draft** — classify themes before GOS scoring.
+5. Offer **`file`** provider when no GitHub token (`.growth-scout/work-items.json`).
+6. Never auto-detect provider from git remote without user confirmation.
+7. Never mine during bootstrap install (`install-growth-scout.mjs`).
+
+**Agent UX script:**
+
+```
+Before I pull demand signals from your issue tracker:
+
+- Provider: GitHub
+- Repo: acme/my-app
+- Scope: open · labels enhancement, feature-request · max 25
+- Data: titles, labels, URLs, reactions, 200-char excerpts (not full threads)
+
+Approve, point me to .growth-scout/work-items.json, or say skip?
+```
 
 **Example prompt (agent-neutral):**
 
@@ -67,11 +96,12 @@ Project file: `.cursor/mcp.json` in your product repo.
 ```json
 {
   "mcpServers": {
-    "growth-scout-competitor": {
+    "growth-scout-mcp": {
       "command": "node",
-      "args": ["/absolute/path/to/Growth-Scout/mcp/growth-scout-competitor/dist/index.js"],
+      "args": ["/absolute/path/to/Growth-Scout/mcp/growth-scout-mcp/dist/index.js"],
       "env": {
-        "BRAVE_SEARCH_API_KEY": "your-key"
+        "BRAVE_SEARCH_API_KEY": "your-key",
+        "GITHUB_TOKEN": "your-read-only-token"
       }
     }
   }
@@ -88,11 +118,12 @@ User config (Windows): `%APPDATA%\Claude\claude_desktop_config.json`
 ```json
 {
   "mcpServers": {
-    "growth-scout-competitor": {
+    "growth-scout-mcp": {
       "command": "node",
-      "args": ["/absolute/path/to/Growth-Scout/mcp/growth-scout-competitor/dist/index.js"],
+      "args": ["/absolute/path/to/Growth-Scout/mcp/growth-scout-mcp/dist/index.js"],
       "env": {
-        "BRAVE_SEARCH_API_KEY": "your-key"
+        "BRAVE_SEARCH_API_KEY": "your-key",
+        "GITHUB_TOKEN": "your-read-only-token"
       }
     }
   }
@@ -116,7 +147,7 @@ Use your client's MCP server configuration with:
 | Transport | stdio |
 | Command | `node` |
 | Args | `["/absolute/path/to/.../dist/index.js"]` |
-| Env | `BRAVE_SEARCH_API_KEY` or `SERPER_API_KEY` as needed |
+| Env | `BRAVE_SEARCH_API_KEY`, `GITHUB_TOKEN` as needed |
 
 Consult your client's MCP documentation for the config file location.
 
@@ -134,4 +165,4 @@ No MCP is required for Codex, Aider, or Copilot unless those tools add MCP in yo
 
 ## Verification
 
-Copy-paste prompt and expected artifacts: [`VERIFICATION.md`](VERIFICATION.md#mcp-competitor-scout-any-mcp-client).
+Copy-paste prompt and expected artifacts: [`VERIFICATION.md`](VERIFICATION.md#mcp-growth-scout-any-mcp-client).

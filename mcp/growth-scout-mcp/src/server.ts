@@ -4,16 +4,20 @@ import {
   fetchPageSchema,
   handleCompetitorSnapshot,
   handleFetchPage,
+  handleMineWorkItemSignals,
+  handlePreviewWorkItemMine,
   handleScoutCompetitors,
   handleSearchCompetitorPages,
+  mineWorkItemSignalsSchema,
+  previewWorkItemMineSchema,
   scoutCompetitorsSchema,
   searchSchema,
 } from "./tools/handlers.js";
 
 export function createServer(): McpServer {
   const server = new McpServer({
-    name: "growth-scout-competitor",
-    version: "0.4.0",
+    name: "growth-scout-mcp",
+    version: "0.6.0",
   });
 
   server.registerTool(
@@ -70,6 +74,36 @@ export function createServer(): McpServer {
     },
     async (args) => {
       const result = await handleSearchCompetitorPages(args);
+      return {
+        content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+      };
+    },
+  );
+
+  server.registerTool(
+    "preview_work_item_mine",
+    {
+      description:
+        "Always call first before mining work-item demand signals. Shows scope summary and estimated item count without fetching issue bodies. Returns preview_id for use with mine_work_item_signals. Ask-first by design — never mine without user approval.",
+      inputSchema: previewWorkItemMineSchema,
+    },
+    async (args) => {
+      const result = await handlePreviewWorkItemMine(args);
+      return {
+        content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
+      };
+    },
+  );
+
+  server.registerTool(
+    "mine_work_item_signals",
+    {
+      description:
+        "Fetch work-item demand signals after user approval. Requires preview_id from preview_work_item_mine and confirmed: true. Returns normalized signals, theme clusters, and evidence ledger markdown. No single-shot mine — preview + confirmation required.",
+      inputSchema: mineWorkItemSignalsSchema,
+    },
+    async (args) => {
+      const result = await handleMineWorkItemSignals(args);
       return {
         content: [{ type: "text", text: JSON.stringify(result, null, 2) }],
       };

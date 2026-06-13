@@ -24,7 +24,7 @@ Canonical list: [`references/market-signal-sources.md`](../market-signal-sources
 
 | Source | What it tells you | Typical strength |
 |--------|-------------------|------------------|
-| Your GitHub issues / discussions | Real integration friction | Strong (**known** for your repo) |
+| Your GitHub issues / discussions (or issue tracker signals) | Real integration friction | Strong (**known** for your repo) |
 | OSS competitor issues & PRs | Unmet needs, breaking changes | Medium (**inferred** fit to your scope) |
 | Docs gaps (your site or competitors') | Activation blockers | Medium–Strong |
 | Hacker News / Reddit / Discord | Early adopter sentiment | Medium (noisy) |
