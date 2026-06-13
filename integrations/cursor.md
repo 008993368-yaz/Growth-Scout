@@ -24,6 +24,10 @@ Keep Growth Scout at repo root and prompt: *Follow SKILL.md (Growth Scout).*
 
 Copy `.cursor/rules/growth-scout.mdc` from this package. It reminds the agent to use Growth Scout on growth prompts — **not a replacement for SKILL.md**.
 
+## Option D: MCP competitor scout (optional)
+
+Connect the Growth Scout Competitor MCP for automated competitor page fetch and draft matrix output. Configuration is the same stdio server used by all MCP clients — see [integrations/mcp.md](mcp.md#cursor).
+
 ## Personal skill
 
 Copy the skill folder to `~/.cursor/skills/growth-scout/` for all projects.

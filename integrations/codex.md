@@ -15,3 +15,7 @@ Follow Growth Scout in SKILL.md. What should we build next?
 ```
 
 Codex will use AGENTS.md context plus files you reference in the prompt.
+
+## Optional MCP
+
+OpenAI Codex CLI does not connect MCP servers directly. Use Growth Scout without MCP, or run competitor scouting in an MCP-capable agent. Server docs: [`integrations/mcp.md`](mcp.md).

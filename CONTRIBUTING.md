@@ -27,6 +27,7 @@ Growth Scout is an agent-agnostic markdown skill package. Contributions should k
 | **Scoring / templates** | Open an issue or PR describing the rubric change and which example outputs need updating. |
 | **Examples** | Add under `examples/` using existing templates; do not present fiction as real customer data. |
 | **Scripts** | Node only, zero npm dependencies, agent-agnostic. |
+| **MCP** | Optional sub-package under `mcp/`; may use npm deps. Keep core skill zero-dep. |
 | **Integrations** | Per-agent wiring lives in `integrations/`; optional Cursor rules stay optional. |
 
 ## Link validation
@@ -34,7 +35,7 @@ Growth Scout is an agent-agnostic markdown skill package. Contributions should k
 `scripts/validate-links.mjs` scans:
 
 - `SKILL.md`, `AGENTS.md`, `README.md`
-- `references/*.md`, `templates/*.md`, `integrations/*.md`, `examples/*.md`
+- `references/*.md`, `templates/*.md`, `integrations/*.md`, `examples/*.md`, `mcp/*.md`
 
 It validates relative `[text](path)` links and backtick `` `path.md` `` references to local markdown files. External URLs are skipped.
 

@@ -282,6 +282,7 @@ Example PRD: `examples/example-growth-prd.md`.
 | Industry packs | `references/industry-packs/` (`b2b-saas`, `developer-tools`, `consumer-mobile`) |
 | Codebase mapping | `references/codebase-product-mapping.md` |
 | Validation options | `references/validation-experiments.md` |
+| Optional MCP scout | `integrations/mcp.md` (any MCP-capable agent) |
 | Product scan example | `examples/example-product-scan.md` |
 | Opportunity report example | `examples/example-opportunity-report.md` |
 

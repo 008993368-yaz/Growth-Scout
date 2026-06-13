@@ -12,3 +12,7 @@ desktop.ini
 # Local overrides (keep skill package portable)
 .env
 .env.*
+
+# Node (optional MCP sub-package)
+node_modules/
+mcp/growth-scout-competitor/dist/

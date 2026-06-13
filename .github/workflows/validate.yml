@@ -15,3 +15,17 @@ jobs:
           node-version: "20"
       - name: Validate markdown links
         run: node scripts/validate-links.mjs
+
+  validate-mcp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install, test, and build MCP package
+        working-directory: mcp/growth-scout-competitor
+        run: |
+          npm ci
+          npm test
+          npm run build

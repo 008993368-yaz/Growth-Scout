@@ -18,3 +18,7 @@ This package includes [`AGENTS.md`](../AGENTS.md) for that purpose.
 ## Option C: Submodule or copy
 
 Vendor this repo or copy `SKILL.md` plus supporting folders into your product project.
+
+## Option D: MCP competitor scout (optional)
+
+If your Claude Code setup supports MCP, connect the Growth Scout Competitor MCP using the same stdio server as other clients. See [`integrations/mcp.md`](mcp.md#claude-code).
