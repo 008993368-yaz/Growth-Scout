@@ -6,12 +6,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag `v0.1.0` points to commit `96d4bc5` (MIT-licensed open-source release; core skill package landed in `704752f` via #1).
 
-## [Unreleased]
+## [0.5.0] - 2026-06-13
 
 ### Added
 
 - **`scripts/install-growth-scout.mjs`** — bootstrap install: copy skill files into a product repo (`--layout root` or `cursor`), run repo inventory, write `.growth-scout/product-map-draft.md`, and print a first agent prompt.
 - **`repo-inventory.mjs`** — exports `generateProductMap` for reuse by the install script (CLI behavior unchanged).
+- **README** — Option C bootstrap install and Tooling section for the install script.
+- **Integrations** — bootstrap install smoke test in `integrations/VERIFICATION.md`; CONTRIBUTING smoke-test lines.
 
 ## [0.4.0] - 2026-06-12
 
@@ -79,6 +81,7 @@ Release tags align with `VERSION` (see [CONTRIBUTING.md](CONTRIBUTING.md)). Tag 
 - **Integrations** — per-agent setup notes for Cursor, Claude Code, Codex, GitHub Copilot, OpenCode, and Aider.
 - **MIT license** and open-source README (#2).
 
+[0.5.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/008993368-yaz/Growth-Scout/compare/v0.1.0...v0.2.0

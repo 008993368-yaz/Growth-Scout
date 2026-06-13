@@ -132,7 +132,7 @@ Auto-detected inventory fields are labeled **inferred**; unknowns stay blank for
 
 ## Versioning
 
-The [`VERSION`](VERSION) file tracks the skill package revision (currently **0.4.0**). Copy it into product repos alongside `SKILL.md` so teams know which Growth Scout revision they pinned. See [`CHANGELOG.md`](CHANGELOG.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
+The [`VERSION`](VERSION) file tracks the skill package revision (currently **0.5.0**). Copy it into product repos alongside `SKILL.md` so teams know which Growth Scout revision they pinned. See [`CHANGELOG.md`](CHANGELOG.md) and [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## vs generic PM skills
 
