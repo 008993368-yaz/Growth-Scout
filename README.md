@@ -48,6 +48,17 @@ Then prompt: **Use the growth-scout skill: what should we build next?**
 
 For Claude Code, Codex, GitHub Copilot, OpenCode, Aider, and other setups, see [`integrations/README.md`](integrations/README.md).
 
+### Option C: Bootstrap install
+
+From the Growth Scout package root, install skill files and generate a draft product map in one step:
+
+```bash
+git clone https://github.com/008993368-yaz/Growth-Scout.git
+node Growth-Scout/scripts/install-growth-scout.mjs /path/to/your-product-repo
+```
+
+Optional layouts: `--layout root` (default, copies to repo root) or `--layout cursor` (`.cursor/skills/growth-scout/`). Use `--dry-run` to preview or `--force` to overwrite an existing install. The script prints a ready-to-use first agent prompt when done.
+
 ## Quick start (any agent)
 
 1. Copy `SKILL.md`, `references/`, `templates/`, `examples/`, and `VERSION` into your product project (or clone this repo).
@@ -97,6 +108,11 @@ examples/
 Zero-dependency Node scripts (no `npm install` required):
 
 ```bash
+# Install skill files + first-scan draft into a product repo
+node scripts/install-growth-scout.mjs /path/to/product-repo
+node scripts/install-growth-scout.mjs /path/to/product-repo --layout cursor
+node scripts/install-growth-scout.mjs --help
+
 # Pre-fill a product-map draft from a target repo (stdout or file)
 node scripts/repo-inventory.mjs .
 node scripts/repo-inventory.mjs /path/to/product --out product-map-draft.md

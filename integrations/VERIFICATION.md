@@ -94,6 +94,25 @@ node scripts/repo-inventory.mjs .
 
 ---
 
+## Bootstrap install smoke test
+
+Run from the Growth Scout package root against a temporary product repo:
+
+```bash
+mkdir -p /tmp/gs-test-app && echo "# Test" > /tmp/gs-test-app/README.md
+node scripts/install-growth-scout.mjs /tmp/gs-test-app --layout root
+test -f /tmp/gs-test-app/SKILL.md
+test -f /tmp/gs-test-app/.growth-scout/product-map-draft.md
+node scripts/install-growth-scout.mjs /tmp/gs-test-app   # should fail without --force
+node scripts/install-growth-scout.mjs /tmp/gs-test-app --force
+```
+
+On Windows, use `$env:TEMP\\gs-test-app` instead of `/tmp/gs-test-app`.
+
+**Expected:** Skill files at repo root; draft map under `.growth-scout/` with an install header line; second install exits 1 until `--force`.
+
+---
+
 ## MCP competitor scout (any MCP client)
 
 **Setup:** Build and configure the stdio server per [`integrations/mcp.md`](mcp.md).
